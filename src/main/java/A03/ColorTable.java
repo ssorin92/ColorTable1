@@ -24,6 +24,9 @@ public class ColorTable {
         if (colorSet.contains(rgbValue)){
             throw new DuplicateRGBValueException();
         }
+        if (colorSet.size() >= paletteSize) {
+            throw new ExceedingCapacityException();
+        }
         colorSet.add(rgbValue);
     }
 

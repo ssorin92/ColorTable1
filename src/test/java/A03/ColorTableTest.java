@@ -3,6 +3,9 @@ package A03;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Testing different functionalities and requirements of the ColorTable project
+ */
 public class ColorTableTest {
     /**
      * First test is the one checking if the constructor functions properly with a

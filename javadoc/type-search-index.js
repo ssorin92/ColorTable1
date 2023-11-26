@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"A03","l":"ColorTable"},{"p":"A03","l":"ColorTableExample"},{"p":"A03","l":"ColorTableTest"},{"p":"A03","l":"DuplicateRGBValueException"},{"p":"A03","l":"ExceedingCapacityException"},{"p":"A03","l":"InvalidPaletteSizeException"},{"p":"A03","l":"InvalidRGBValueException"}];updateSearchResults();

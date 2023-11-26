@@ -1,6 +1,7 @@
 package A03;
+
 import org.junit.jupiter.api.Test;
-import java.awt.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ColorTableTest {
     /**
@@ -14,5 +15,18 @@ public class ColorTableTest {
 
         ColorTable colorTable= new ColorTable(paletteSize);
         assertEquals(paletteSize,colorTable.getPaletteSize());
+    }
+
+    /**
+     * Next test is checking if an exception is thrown properly whenever
+     * the constructor gets an invalid value for the palette size
+     */
+    @Test
+    public void testConstructorWithInvalidPaletteSizeThrowsException() {
+        // Given
+        int invalidPaletteSize = 3;
+
+        // When and Then
+        assertThrows(InvalidPaletteSizeException.class, () -> new ColorTable(invalidPaletteSize));
     }
 }

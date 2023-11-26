@@ -53,4 +53,18 @@ public class ColorTableTest {
 
         assertThrows(InvalidRGBValueException.class, () -> colorTable.add(invalidRgbValue));
     }
+
+    /**
+     * Test checks whether adding a duplicate color
+     * (ie it already exists in there), throws an exception in the program
+     */
+    @Test
+    public void testAddDuplicateColorThrowsException() {
+        ColorTable colorTable = new ColorTable(4);
+        int rgbValue = 0xFF0000; // Red color
+
+        colorTable.add(rgbValue);
+
+        assertThrows(DuplicateRGBValueException.class, () -> colorTable.add(rgbValue));
+    }
 }

@@ -18,6 +18,10 @@ public class ColorTable {
 
 
     public void add(int rgbValue) {
+        if (!isValidRgbValue(rgbValue)) {
+            throw new InvalidRGBValueException();
+        }
+
         colorSet.add(rgbValue);
     }
 
@@ -32,5 +36,10 @@ public class ColorTable {
     public boolean contains(int rgbValue) {
 
         return colorSet.contains(rgbValue);
+    }
+
+    private boolean isValidRgbValue(int rgbValue) {
+        // Assuming a valid RGB value is a 24-bit value
+        return (rgbValue >= 0 && rgbValue <= 0xFFFFFF);
     }
 }

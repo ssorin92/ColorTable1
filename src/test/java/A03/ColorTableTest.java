@@ -67,4 +67,20 @@ public class ColorTableTest {
 
         assertThrows(DuplicateRGBValueException.class, () -> colorTable.add(rgbValue));
     }
+
+    /**
+     * Checks if an exception is thrown when someone tries to add a new color to the palette,
+     * but the palette is already full on size.
+     */
+    @Test
+    public void testExceedCapacityThrowsException() {
+        ColorTable colorTable = new ColorTable(2);
+        int red = 0xFF0000;
+        int green = 0x00FF00;
+
+        colorTable.add(red);
+        colorTable.add(green);
+
+        assertThrows(ExceedingCapacityException.class, () -> colorTable.add(0x0000FF));
+    }
 }

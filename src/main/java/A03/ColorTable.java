@@ -21,7 +21,9 @@ public class ColorTable {
         if (!isValidRgbValue(rgbValue)) {
             throw new InvalidRGBValueException();
         }
-
+        if (colorSet.contains(rgbValue)){
+            throw new DuplicateRGBValueException();
+        }
         colorSet.add(rgbValue);
     }
 

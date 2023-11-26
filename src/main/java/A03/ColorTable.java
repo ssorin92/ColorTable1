@@ -8,11 +8,18 @@ public class ColorTable {
 
 
     public ColorTable(int paletteSize) {
+        if (!isValidPaletteSize(paletteSize)) {
+            throw new InvalidPaletteSizeException();
+        }
+
         this.paletteSize = paletteSize;
         this.colorSet = new HashSet<>();
     }
 
     public int getPaletteSize() {
         return paletteSize;
+    }
+    private boolean isValidPaletteSize(int size) {
+        return size > 1 && size <= 1024 && (size & (size - 1)) == 0;
     }
 }

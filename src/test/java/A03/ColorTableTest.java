@@ -23,10 +23,22 @@ public class ColorTableTest {
      */
     @Test
     public void testConstructorWithInvalidPaletteSizeThrowsException() {
-        // Given
         int invalidPaletteSize = 3;
 
-        // When and Then
         assertThrows(InvalidPaletteSizeException.class, () -> new ColorTable(invalidPaletteSize));
+    }
+
+
+    /**
+     * This test checks if the program adds a valid color to the palette properly
+     */
+    @Test
+    public void testAddValidColor() {
+        ColorTable colorTable = new ColorTable(4);
+        int rgbValue = 0xFF0000; // Red color
+
+        colorTable.add(rgbValue);
+
+        assertTrue(colorTable.contains(rgbValue));
     }
 }

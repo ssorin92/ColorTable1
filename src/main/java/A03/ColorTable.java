@@ -16,10 +16,21 @@ public class ColorTable {
         this.colorSet = new HashSet<>();
     }
 
+
+    public void add(int rgbValue) {
+        colorSet.add(rgbValue);
+    }
+
+
     public int getPaletteSize() {
         return paletteSize;
     }
     private boolean isValidPaletteSize(int size) {
         return size > 1 && size <= 1024 && (size & (size - 1)) == 0;
+    }
+
+    public boolean contains(int rgbValue) {
+
+        return colorSet.contains(rgbValue);
     }
 }

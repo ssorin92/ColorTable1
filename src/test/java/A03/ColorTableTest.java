@@ -41,4 +41,16 @@ public class ColorTableTest {
 
         assertTrue(colorTable.contains(rgbValue));
     }
+
+    /**
+     * The following test checks if adding an invalid color to the palette triggers
+     * the proper reaction (ie proper throw exception)
+     */
+    @Test
+    public void testAddInvalidColorThrowsException() {
+        ColorTable colorTable = new ColorTable(4);
+        int invalidRgbValue = 0xFFFFFF0; // Invalid RGB value
+
+        assertThrows(InvalidRGBValueException.class, () -> colorTable.add(invalidRgbValue));
+    }
 }
